@@ -1,11 +1,9 @@
 #include "shell.h"
 
-int status;
-
 /**
- * _setenv - sets and environmental variable
- * @name: name of the variable
- * @value: value to set the variable to
+ * _setenv - sets the environment's variables
+ * @name: name of the variables
+ * @value: value to set the variables at
  *
  * Return: 0 on success
  */
@@ -50,8 +48,8 @@ int _setenv(const char *name, const char *value)
 }
 
 /**
- * _unsetenv - deletes an environmental variable
- * @name: name of variable
+ * _unsetenv - Delete the environmental variables
+ * @name: Name of variables
  *
  * Return: 0 if successful
  */
@@ -81,8 +79,8 @@ int _unsetenv(const char *name)
 }
 
 /**
- * change_dir - changes the current working directory
- * @name: name of directory to change to
+ * change_dir - Changes all current working directory
+ * @name: Name of directory to change at
  *
  * Return: 0 if successful
  */
@@ -128,7 +126,7 @@ int change_dir(char *name)
 	}
 	if (str_compare("-", name, MATCH) == TRUE)
 	{
-		pwd = get_array_element(environ, "OLDPWD");
+		pwd = get_array_element(environ,"OLDPWD");
 		if (pwd == NULL)
 			return (2);
 
@@ -168,11 +166,11 @@ int change_dir(char *name)
 }
 
 /**
- * alias_func - deals with command aliases
+ * alias_func - deals with command alias
  * @args: arguments from command line
- * @to_free: indicated if aliases need to be freed (exiting shell);
+ * @to_free: indicated if alias need to be freed (exiting shell);
  *
- * Return: TRUE if exiting, FALSE if the command is not "alias" or an alias,
+ * Return: TRUE if exiting, FALSE the command is not "alias" or an alias,
  * SKIP_FORK if success
  */
 int alias_func(char **args, int to_free)

@@ -86,7 +86,7 @@ int _setenv(const char *name, const char *value);
 
 int _unsetenv(const char *name);
 
-int change_dir(char *name);
+int err_message(char *name);
 
 int alias_func(char **args, int free);
 
@@ -96,9 +96,9 @@ int check_if_alias(char **args, alias *alias_ptr);
 
 int print_aliases(alias *alias_ptr);
 
-int print_alias_value(char arg, alias *alias_ptr);
+int print_alias_value(char *, alias *alias_ptr);
 
-int set_alias_value(char *arg, alias_ptr, char *new_value);
+int print_alias_value(char *arg, ...)*alias_ptr, char *new_value;
 
 int print_env(void);
 
