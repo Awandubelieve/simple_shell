@@ -1,5 +1,6 @@
 #include "shell.h"
 
+
 int _strlendp_inner(char **s, int x);
 /**
  * main - Shell Program
@@ -7,7 +8,7 @@ int _strlendp_inner(char **s, int x);
  * @av: parameters as input to program
  * @env: unix environment
  *
- * Return: Will only input all missing file
+ * Return: Should only exit through shell inputs
  */
 int main(int ac, char **av, char **env)
 {
@@ -56,13 +57,13 @@ int main(int ac, char **av, char **env)
 
 /**
  * set_struct - initializes shell struct
- * @argv0: Name to execute
+ * @argv0: name of executable
  * @errn: number of error message
  * @exnum: exit number of shell
  * @relation: relation for logical operators
  * @run_able: if cmd should be run
  * @env: current environment
- * @unsetnull: check for setting  to NULL
+ * @unsetnull: check for setting environment to NULL
  *
  * Return: Pointer to struct
  *
