@@ -19,19 +19,19 @@
 #define PREFIX 4
 #define EXIT_SHELL 5
 #define SKIP_FORK 6
-#define D0_EXECVE 7
+#define DO_EXECVE 7
 
 /**
-* struct Alias - singler linked lists.
-* @name: Name of Alias.
-* @value: Commands to alias call.
-* @next: Point that nexts node.
-*/
+ * struct Alias - singly linked list
+ * @name: name of alias
+ * @value: command that alias calls
+ * @next: points to next node
+ */
 typedef struct Alias
 {
-char *name;
-char *value;
-struct Alias *next;
+	char *name;
+	char *value;
+	struct Alias *next;
 } alias;
 
 extern char **environ;
@@ -50,13 +50,13 @@ int and_or(char **args, char operator, int last_compare);
 
 char *check_command(char **args);
 
-int excute_command(char **args);
+int execute_command(char **args);
 
 char *input_san(char *old_buf, size_t *old_size);
 
 int input_err_check(char *ptr);
 
-void err_massage(char *arg0, char *arg1);
+void err_message(char *arg0, char *arg1);
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
@@ -86,7 +86,7 @@ int _setenv(const char *name, const char *value);
 
 int _unsetenv(const char *name);
 
-int err_message(char *name);
+int change_dir(char *name);
 
 int alias_func(char **args, int free);
 
@@ -96,9 +96,9 @@ int check_if_alias(char **args, alias *alias_ptr);
 
 int print_aliases(alias *alias_ptr);
 
-int print_alias_value(char *, alias *alias_ptr);
+int print_alias_value(char *arg, alias *alias_ptr);
 
-int print_alias_value(char *arg, ...)*alias_ptr, char *new_value;
+int set_alias_value(char *arg, alias *alias_ptr, char *new_value);
 
 int print_env(void);
 
@@ -107,3 +107,4 @@ char *_itoa(int n);
 int _atoi(char *s);
 
 #endif
+
