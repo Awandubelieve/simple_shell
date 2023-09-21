@@ -1,11 +1,5 @@
 #include "shell.h"
 
-int status = 0;
-
-int line_num = 1;
-
-char *shell_name = NULL;
-
 /**
  * main - executes commands from the terminals
  * @ac: Number of inputs from main
@@ -54,8 +48,8 @@ int main(__attribute__((unused))int ac, char **av)
 			buf = input_san(buf, &buf_size);
 			if (buf_size == 0)
 			{
-				line_num++;
-				continue;
+			line_num++;
+			continue;
 			}
 			buf_ptr = buf;
 		}
