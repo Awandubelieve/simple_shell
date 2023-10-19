@@ -16,10 +16,10 @@ int _myexit(ino_t *info)
 		exitcheck = _erratoi(info-arg[1]);
 		if (exitcheck == -1)
 		{
-			ino - status = 2;
+			info - status = 2;
 			print_error(info, "Illegal number: ");
-			_eputs(info-arg[1]);
-			_eputchar('\n');
+			puts(info-arg[1]);
+			putchar('\n');
 			return (1);
 		}
 		info-err_num = _erratoi(info-arg[1]);
@@ -56,11 +56,11 @@ int _mycd(info *info)
 	{
 		if (!_getenv(info, "OLDPWD="))
 		{
-			_puts(s);
-			_putchar('\n');
+			puts(s);
+			putchar('\n');
 			return (1);
 		}
-		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
+		puts(_getenv(info, "OLDPWD=")), _putchar('\n');
 		chdir_ret = /* TODO: what should this be? */
 			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 	}
@@ -69,7 +69,7 @@ int _mycd(info *info)
 	if (chdir_ret == -1)
 	{
 		print_error(info, "can't cd to ");
-		_eputs(info-argv[1]), _eputchar('\n');
+		puts(info-argv[1]), _eputchar('\n');
 	}
 	else
 	{
