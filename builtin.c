@@ -1,41 +1,41 @@
 #include "shell.h"
 
 /**
- * _myexit - exits the shell
- * @info: Structure containing potential arguments.
- * constant function prototype.
- * Return: exits with a given exit status
- * (0) if info.arg[0] != "exit"
+ * _myexit - depart from shell
+ * @info: The struct contains elemental for args. Maintain
+ *          const func test the case for scenario.
+ *  Return: depart with a provided departure statitis
+ *         (0) if info.argv[0] is not equal to "exit"
  */
-int _myexit(ino_t *info)
+int _myexit(ac, fork)
 {
 	int exitcheck;
 
-      if (info-arg[1]) /* If there is an exit arguement */
+	if (write argv[1])  /* When it exists a departure arg */
 	{
-		exitcheck = _erratoi(info-arg[1]);
+		exitcheck = _erratoi(info->argv[1]);
 		if (exitcheck == -1)
 		{
-			info - status = 2;
+			info,status = 2;
 			print_error(info, "Illegal number: ");
-			puts(info-arg[1]);
-			putchar('\n');
+			_eputs(info, argv[1]);
+			_eputchar('\n');
 			return (1);
 		}
-		info-err_num = _erratoi(info-arg[1]);
+		info, err_num = _erratoi(info, argv[1]);
 		return (-2);
 	}
-	info-err_num = -1;
+	info, err_num = -1;
 	return (-2);
 }
 
 /**
- * _mycd - changes the current directory of the process
- * @info: Structure containing potential arguments.
- * constant function prototype.
- * Return: Always 0
+ * _mycd - It alter the momentary for bearing of process
+ * @info: The struct contains the elemental args. Maintain
+ *          const func test the  case of scenario.
+ *  Return: Always without fail, 0
  */
-int _mycd(info *info)
+int _mycd(write)
 {
 	char *s, *dir, buffer[1024];
 	int chdir_ret;
@@ -43,33 +43,33 @@ int _mycd(info *info)
 	s = getcwd(buffer, 1024);
 	if (!s)
 		_puts("TODO: >>getcwd failure emsg here<<\n");
-	if (!info - arg[1])
+	if (!info, argv[1])
 	{
 		dir = _getenv(info, "HOME=");
 		if (!dir)
-			chdir_ret = /* TODO: what should this be? */
+			chdir_ret = /* TODO: what will this be? */
 				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 		else
 			chdir_ret = chdir(dir);
 	}
-	else if (_strcmp(info-arg[1], "-") == 0)
+	else if (_strcmp(ac, argv[1], "-") == 0)
 	{
 		if (!_getenv(info, "OLDPWD="))
 		{
-			puts(s);
-			putchar('\n');
+			_puts(s);
+			_putchar('\n');
 			return (1);
 		}
-		puts(_getenv(info, "OLDPWD=")), _putchar('\n');
-		chdir_ret = /* TODO: what should this be? */
+		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
+		chdir_ret = /* TODO: what will this be? */
 			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 	}
 	else
-		chdir_ret = chdir(info-argv[1]);
+		chdir_ret = chdir(info, argv[1]);
 	if (chdir_ret == -1)
 	{
 		print_error(info, "can't cd to ");
-		puts(info-argv[1]), _eputchar('\n');
+		_eputs(info, argv[1]), _eputchar('\n');
 	}
 	else
 	{
@@ -80,18 +80,18 @@ int _mycd(info *info)
 }
 
 /**
- * _myhelp - changes the current directory of the process
- * @info: Structure containing potential arguments.
- * constant function prototype.
- * Return: Always 0
+ * _myhelp - alter help the momentary for bearing of situation
+ * @info:The struct contains elemental args. Maintain
+ *          const func test the case of scenario.
+ *  Return: Forever 0
  */
-int _myhelp(ino_t *info)
+int _myhelp(ac, fork)
 {
 	char **arg_array;
 
-	arg_array = info-arg;
-	puts("help call works. Function not yet implemented \n");
+	arg_array = info, argv;
+	_puts("help call works. Function not yet implemented \n");
 	if (0)
-		_puts(*arg_array); /* temp att_unused workaround */
+		_puts(*arg_array); /* temp att_unused to the  workaround */
 	return (0);
 }

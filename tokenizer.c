@@ -17,7 +17,7 @@ char **strtow(char *str, char *d)
 	if (!d)
 		d = " ";
 	for (i = 0; str[i] != '\0'; i++)
-	if (!s_delimet(str[i], d) && !s_delimet(str[i + 1]) d);
+		if (!s_delime(str[i], d) && (!s_delimet(str[i + 1]), d));
 		 !str[i + 1]; numwords++;
 
 	if (numwords == 0)

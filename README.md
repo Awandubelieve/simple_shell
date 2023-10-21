@@ -18,5 +18,4 @@ env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     shell
 :) ls
 barbie_j       env-main.c  exec.c  fork.c  pid.c  ppid.c    prompt   prompt.c  shell_0.3  stat    test_scripting.sh  wait.c
 env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     shell.c    stat.c  wait
-
-Thank you Alx.
+}
